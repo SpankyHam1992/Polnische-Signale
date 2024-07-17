@@ -25,7 +25,7 @@ enum class SignalState : int
     INVALID
 };
 
-constexpr int ID_s = 42;
+constexpr int ID_s = 37;
 constexpr int BlinkTime = 500;
 constexpr int WaitTime = 500;
 constexpr int lamps[] = {9, 8, 7, 6, 5, 4, 3};
