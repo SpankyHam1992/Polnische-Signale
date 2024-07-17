@@ -34,7 +34,7 @@ SignalState currentState = SignalState::S1;
 unsigned long stopWatchBlink = 0;
 bool On = true;
 
-void SignalLamps(const bool states[]);
+void SignalLamps(bool states[]);
 void SetSignalState(SignalState state);
 void receiveEvent(int howMany);
 
