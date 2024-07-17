@@ -25,13 +25,14 @@ enum class SignalState : int
   INVALID
 };
 
-SignalState currentState = SignalState::S1;
 const int ID_s1 = 42;
 const int ID_s2 = 53;
 const int ButtonPlus = 2;
 const int ButtonMinus = 3;
 const int CheckTime = 100;
 const int SendTime = 2000;
+
+SignalState currentState = SignalState::S1;
 unsigned long stopWatchSend = 0;
 unsigned long stopWatchCheck = 0;
 bool buttonPressed = false;

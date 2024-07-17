@@ -1,8 +1,6 @@
 #include <Arduino.h>
 #include <Wire.h>
 
-const int lamps[] = {9, 8, 7, 6, 5, 4, 3};
-
 enum class SignalState : int
 {
   S1 = 1,
@@ -27,15 +25,18 @@ enum class SignalState : int
   INVALID
 };
 
-void SignalLamps(bool states[]);
-void SetSignalState(SignalState state);
-void receiveEvent(int howMany);
-SignalState currentState = SignalState::S1;
 const int ID_s = 42;
 const int BlinkTime = 500;
 const int WaitTime = 500;
+const int lamps[] = {9, 8, 7, 6, 5, 4, 3};
+
+SignalState currentState = SignalState::S1;
 unsigned long stopWatchBlink = 0;
 bool On = true;
+
+void SignalLamps(bool states[]);
+void SetSignalState(SignalState state);
+void receiveEvent(int howMany);
 
 void setup()
 {

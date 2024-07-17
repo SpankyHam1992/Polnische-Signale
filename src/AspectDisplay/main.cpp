@@ -35,11 +35,11 @@ const bool resistorsOnSegments = true;
 const byte hardwareConfig = COMMON_CATHODE;
 
 SignalState currentState = SignalState::S1;
-SevSeg sevseg;
 unsigned long stopWatchDisp = 0;
 
 void receiveEvent(int howMany);
 void SetSignalState(SignalState aspect);
+SevSeg sevseg;
 
 void setup()
 {
