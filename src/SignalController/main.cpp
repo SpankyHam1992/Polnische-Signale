@@ -25,12 +25,12 @@ enum class SignalState : int
   INVALID
 };
 
-const int ID_s1 = 42;
-const int ID_s2 = 53;
-const int ButtonPlus = 2;
-const int ButtonMinus = 3;
-const int CheckTime = 100;
-const int SendTime = 2000;
+constexpr int ID_s1 = 42;
+constexpr int ID_s2 = 53;
+constexpr int ButtonPlus = 2;
+constexpr int ButtonMinus = 3;
+constexpr int CheckTime = 100;
+constexpr int SendTime = 2000;
 
 SignalState currentState = SignalState::S1;
 unsigned long stopWatchSend = 0;

@@ -25,10 +25,10 @@ enum class SignalState : int
   INVALID
 };
 
-const int ID_s = 42;
-const int BlinkTime = 500;
-const int WaitTime = 500;
-const int lamps[] = {9, 8, 7, 6, 5, 4, 3};
+constexpr int ID_s = 42;
+constexpr int BlinkTime = 500;
+constexpr int WaitTime = 500;
+constexpr int lamps[] = {9, 8, 7, 6, 5, 4, 3};
 
 SignalState currentState = SignalState::S1;
 unsigned long stopWatchBlink = 0;
@@ -41,16 +41,12 @@ void receiveEvent(int howMany);
 void setup()
 {
   Wire.begin(ID_s);
-  delay(WaitTime);
-
   for (int pin : lamps)
   {
     pinMode(pin, OUTPUT);
   }
-
   bool initialState[7] = {0};
   SignalLamps(initialState);
-
   Wire.onReceive(receiveEvent);
 }
 
