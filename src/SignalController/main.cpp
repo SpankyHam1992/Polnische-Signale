@@ -80,6 +80,7 @@ void loop()
   {
     stopWatchSend = currentMillis;
     sendState(ID_s1);
+    delay(CheckTime);
     sendState(ID_s2);
   }
 }
