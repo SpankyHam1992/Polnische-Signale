@@ -26,13 +26,13 @@ enum class SignalState : int
   INVALID
 };
 
-const int DispTime = 500;
-const int ID_s = 53;
-const byte numDigits = 4;
-const byte digitPins[] = {2, 3, 4, 5};
-const byte segmentPins[] = {6, 7, 8, 9, 10, 11, 12, 13};
-const bool resistorsOnSegments = true;
-const byte hardwareConfig = COMMON_CATHODE;
+constexpr int DispTime = 500;
+constexpr int ID_s = 53;
+constexpr byte numDigits = 4;
+constexpr byte digitPins[] = {2, 3, 4, 5};
+constexpr byte segmentPins[] = {6, 7, 8, 9, 10, 11, 12, 13};
+constexpr bool resistorsOnSegments = true;
+constexpr byte hardwareConfig = COMMON_CATHODE;
 
 SignalState currentState = SignalState::S1;
 unsigned long stopWatchDisp = 0;
