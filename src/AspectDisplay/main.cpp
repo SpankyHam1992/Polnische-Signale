@@ -78,7 +78,7 @@ void receiveEvent(int howMany)
 
 void SetSignalState(SignalState aspect)
 {
-  const char *displayStr = "____";
+  const char *displayStr = "0000";
   switch (aspect)
   {
   case SignalState::S1:
@@ -134,6 +134,9 @@ void SetSignalState(SignalState aspect)
     break;
   case SignalState::SZ:
     displayStr = "----";
+    break;
+  case SignalState::MS2:
+    displayStr = "____";
     break;
   default:
     break;
