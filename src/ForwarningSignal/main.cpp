@@ -28,7 +28,7 @@ enum class SignalState : int
 constexpr int ID_s = 37;
 constexpr int BlinkTime = 500;
 constexpr int WaitTime = 500;
-constexpr int lamps[] = {9, 8, 7, 6, 5, 4, 3};
+constexpr int lamps[] = {9, 8};
 
 SignalState currentState = SignalState::S1;
 unsigned long stopWatchBlink = 0;
@@ -45,7 +45,7 @@ void setup()
     {
         pinMode(pin, OUTPUT);
     }
-    bool initialState[7] = {0};
+    bool initialState[2] = {0};
     SignalLamps(initialState);
     Wire.onReceive(receiveEvent);
 }
@@ -61,7 +61,7 @@ void loop()
 
 void receiveEvent(int howMany)
 {
-    if (howMany >= sizeof(int))
+    if (howMany >= static_cast<int>(sizeof(int)))
     {
         int receivedValue;
         Wire.readBytes((char *)&receivedValue, sizeof(receivedValue));
@@ -74,7 +74,7 @@ void receiveEvent(int howMany)
 
 void SignalLamps(bool states[])
 {
-    for (int i = 0; i < 7; ++i)
+    for (int i = 0; i < 2; ++i)
     {
         digitalWrite(lamps[i], states[i]);
     }
@@ -82,7 +82,7 @@ void SignalLamps(bool states[])
 
 void SetSignalState(SignalState state)
 {
-    bool states[7] = {0};
+    bool states[2] = {0};
     switch (state)
     {
     case SignalState::S1:
